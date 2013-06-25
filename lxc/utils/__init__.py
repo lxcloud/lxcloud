@@ -28,6 +28,13 @@ class ContainerIsNotRunning(Exception):
 
 	def __str__(self):
 		return 'Container {} is not running!'.format(container_name)
+		
+class ContainerIsNotFrozen(Exception):
+	def __init__(self, container_name):
+		self.container_name = container_name
+
+	def __str__(self):
+		return 'Container {} is not frozen!'.format(container_name)
 
 def start(container_name, config_file = None):
 	'''
