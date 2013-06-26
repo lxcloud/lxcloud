@@ -6,35 +6,35 @@ class ContainerAlreadyExists(Exception):
 		self.container_name = containter_name
 
 	def __str__(self):
-		return 'Container {} already exists!'.format(container_name)
+		return 'Container {} already exists!'.format(self.container_name)
 
 class ContainerNotExists(Exception):
 	def __init__(self, container_name):
 		self.container_name = container_name
 
 	def __str__(self):
-		return 'Container {} not exists!'.format(container_name)
+		return 'Container {} not exists!'.format(self.container_name)
 
 class ContainerIsAlreadyRunning(Exception):
 	def __init__(self, container_name):
 		self.container_name = container_name
 
 	def __str__(self):
-		return 'Container {} is already running!'.format(container_name)
+		return 'Container {} is already running!'.format(self.container_name)
 
 class ContainerIsNotRunning(Exception):
 	def __init__(self, container_name):
 		self.container_name = container_name
 
 	def __str__(self):
-		return 'Container {} is not running!'.format(container_name)
+		return 'Container {} is not running!'.format(self.container_name)
 		
 class ContainerIsNotFrozen(Exception):
 	def __init__(self, container_name):
 		self.container_name = container_name
 
 	def __str__(self):
-		return 'Container {} is not frozen!'.format(container_name)
+		return 'Container {} is not frozen!'.format(self.container_name)
 
 def start(container_name, config_file = None):
 	'''
